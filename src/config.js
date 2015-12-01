@@ -15,13 +15,13 @@ module.exports = Object.assign({
   apiHost: process.env.APIHOST || 'localhost',
   apiPort: process.env.APIPORT,
   app: {
-    title: 'React Redux Example',
-    description: 'All the modern best practices in one example.',
+    title: 'honestbee Example',
+    description: 'get groceries fast',
     meta: {
       charSet: 'utf-8',
       property: {
         'og:site_name': 'React Redux Example',
-        'og:image': 'https://react-redux.herokuapp.com/logo.jpg',
+        'og:image': 'https://honestbees.s3.amazonaws.com/images/honestbee-logo@2x.png',
         'og:locale': 'en_US',
         'og:title': 'React Redux Example',
         'og:description': 'All the modern best practices in one example.',

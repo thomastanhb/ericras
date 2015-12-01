@@ -4,8 +4,10 @@ import { IndexLink } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, NavBrand, Nav, NavItem, CollapsibleNav } from 'react-bootstrap';
 import DocumentMeta from 'react-document-meta';
+import { isLoaded as isProductsLoaded, load as loadProducts } from 'redux/modules/hbProducts';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
+import { HbProductsComp } from 'components';
 import { InfoBar } from 'components';
 import { pushState } from 'redux-router';
 import connectData from 'helpers/connectData';
@@ -13,6 +15,9 @@ import config from '../../config';
 
 function fetchData(getState, dispatch) {
   const promises = [];
+  if (!isProductsLoaded(getState())) {
+    promises.push(dispatch(loadProducts()));
+  }
   if (!isInfoLoaded(getState())) {
     promises.push(dispatch(loadInfo()));
   }
@@ -104,9 +109,14 @@ export default class App extends Component {
           </CollapsibleNav>
         </Navbar>
 
+
         <div className={styles.appContent}>
+          <br/><br/>
+          <HbProductsComp/>
+          <br/>
           {this.props.children}
         </div>
+
         <InfoBar/>
 
         <div className="well text-center">

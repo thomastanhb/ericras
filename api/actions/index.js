@@ -1,3 +1,4 @@
+export hbAPIProducts from './hbAPIProducts';
 export loadInfo from './loadInfo';
 export loadAuth from './loadAuth';
 export login from './login';
