@@ -7,6 +7,7 @@ import counter from './counter';
 import {reducer as form} from 'redux-form';
 import info from './info';
 import hbProducts from './hbProducts';
+import hbCart from './hbCart';
 import widgets from './widgets';
 
 export default combineReducers({
@@ -19,6 +20,7 @@ export default combineReducers({
     counter3: counter
   }),
   hbProducts,
+  hbCart,
   info,
   widgets
 });

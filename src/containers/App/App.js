@@ -4,10 +4,12 @@ import { IndexLink } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, NavBrand, Nav, NavItem, CollapsibleNav } from 'react-bootstrap';
 import DocumentMeta from 'react-document-meta';
+// import { isLoaded as isCartLoaded, load as loadCart } from 'redux/modules/hbCart';
 import { isLoaded as isProductsLoaded, load as loadProducts } from 'redux/modules/hbProducts';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
 import { HbProductsComp } from 'components';
+import { HbCartComp } from 'components';
 import { InfoBar } from 'components';
 import { pushState } from 'redux-router';
 import connectData from 'helpers/connectData';
@@ -15,6 +17,9 @@ import config from '../../config';
 
 function fetchData(getState, dispatch) {
   const promises = [];
+  // if (!isCartLoaded(getState())) {
+  //   promises.push(dispatch(loadCart()));
+  // }
   if (!isProductsLoaded(getState())) {
     promises.push(dispatch(loadProducts()));
   }
@@ -111,9 +116,15 @@ export default class App extends Component {
 
 
         <div className={styles.appContent}>
-          <br/><br/>
-          <HbProductsComp/>
-          <br/>
+          <div className={'container ' + styles.topMargin}>
+            <div className={'col-md-9 '}>
+              <HbProductsComp/>
+            </div>
+            <div className={'col-md-3 '}>
+              <HbCartComp/>
+            </div>
+          </div>
+          <hr/>
           {this.props.children}
         </div>
 

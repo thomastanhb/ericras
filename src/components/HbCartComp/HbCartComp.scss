@@ -1,4 +1,4 @@
-.hbProductsComp {
+.hbCartComp {
   font-variant: italics;
   width: 100%;
 }
@@ -6,7 +6,6 @@
 .time {
   margin: 0 30px;
 }
-
 
 html, body {
     height: 100%;
@@ -31,7 +30,7 @@ body *
 
 section#flux-cart
 {
-    width: 50%;
+    width: 100%;
     height: 100%;
     overflow-x: hidden;
     overflow-y: visible;
@@ -42,7 +41,7 @@ section#flux-cart
 
 .flux-product
 {
-    width: 50%;
+    width: 100%;
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
@@ -83,7 +82,7 @@ select
 
     display: block;
 
-    width: 50%;
+    width: 100%;
     height: 40px;
 }
 
@@ -94,7 +93,7 @@ button
 
     display: block;
 
-    width: 50%;
+    width: 100%;
     margin-top: 20px;
     padding: 10px 30px;
 
@@ -147,7 +146,7 @@ button.view-cart:active
     top: 20px;
     right: -500px;
 
-    width: 50%;
+    width: 100%;
     max-width: 280px;
 
     -webkit-transition: .25s right ease;
@@ -211,7 +210,7 @@ button.view-cart:active
 
     display: block;
 
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 20px;
 
@@ -245,7 +244,7 @@ button.view-cart:active
         top: auto;
         right: auto;
 
-        width: 50%;
+        width: 100%;
     }
 }
 
@@ -254,7 +253,7 @@ button.view-cart:active
     .flux-product img,
     .flux-product-detail
     {
-        width: 50%;
+        width: 100%;
     }
     .mini-cart
     {
@@ -265,8 +264,8 @@ button.view-cart:active
 
         overflow: scroll;
 
-        width: 50%;
-        max-width: 50%;
+        width: 100%;
+        max-width: 100%;
 
     }
     .mini-cart .close-cart
@@ -277,7 +276,7 @@ button.view-cart:active
         top: auto;
         right: auto;
 
-        width: 50%;
+        width: 100%;
         padding: 20px 0;
 
         border-radius: 0;
